@@ -146,12 +146,12 @@ into the {body} of the default.hbs template --}}
               </div>
             </div>
           </section>
-          <section class="post-full-comments">
+          {{!-- <section class="post-full-comments">
               <script defer src="https://comments.jacobsokora.me/js/commento.js"></script>
               <div id="commento"></div>
-          </section>
+          </section> --}}
           {{!-- If you want to embed comments, this is a good place to do it! --}}
-          {{!--
+          
           <section class="m-comments">
             <div class="m-load-comments">
               <div class="m-load-comments__line"></div>
@@ -160,22 +160,11 @@ into the {body} of the default.hbs template --}}
               </button>
             </div>
             <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
+              <script defer src="https://comments.jacobsokora.me/js/commento.js"></script>
+              <div id="commento"></div>
             </div>
           </section>
-          --}}
+         
         {{/post}}
         {{!-- Related posts --}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
