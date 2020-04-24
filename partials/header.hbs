@@ -101,6 +101,13 @@ This header template is shared across all the pages.
             <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
               <span class="icon-search"></span>
             </button>
+            {{#if @member}}
+              <div class="account-menu">
+                <a href="javascript:" class="account-menu-avatar" id="account-menu" type="checkbox" name="menu">
+                  {{> "icons/avatar"}}
+                  {{#if @member.avatar_image}}
+                </a>
+              </div>
             {{!-- <div class="m-toggle-darkmode js-tooltip" data-tippy-content="{{t "Toggle dark mode"}}">
               <input type="checkbox" class="js-toggle-darkmode">
               <div></div>
